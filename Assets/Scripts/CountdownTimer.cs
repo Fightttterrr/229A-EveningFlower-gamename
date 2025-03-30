@@ -1,11 +1,11 @@
 using UnityEngine;
-using TMPro; // ใช้กับ TextMeshPro
+using TMPro; 
 
 public class CountdownTimer : MonoBehaviour
 {
-    public float timeRemaining = 300f; // 5 นาที (300 วินาที)
-    public TextMeshProUGUI timerText; // UI Text แสดงเวลา
-    public GameObject gameOverUI; // UI ที่จะแสดงเมื่อแพ้
+    public float timeRemaining = 300f;
+    public TextMeshProUGUI timerText;
+    public GameObject gameOverUI;
 
     private bool isGameOver = false;
 

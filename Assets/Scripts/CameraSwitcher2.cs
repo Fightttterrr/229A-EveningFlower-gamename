@@ -11,7 +11,7 @@ public class CameraSwitcher2 : MonoBehaviour
 
     void Start()
     {
-        // ตั้งค่ากล้องเริ่มต้นเป็นมุมมองบุคคลที่ 1
+        
         SetCamera(frontCamera);
     }
 
