@@ -4,7 +4,7 @@ using TMPro;
 public class KeyCollector : MonoBehaviour
 {
     public int keyCount = 0; // จำนวนกุญแจที่เก็บได้
-    public int totalKeys = 3; // จำนวนกุญแจทั้งหมด
+    public int totalKeys = 3; // จำนวนกุญแจทั้งหมดที่ต้องเก็บ
     public TextMeshProUGUI keyText; // UI แสดงจำนวนกุญแจ
 
     void Start()
@@ -14,12 +14,11 @@ public class KeyCollector : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("ชนกับ: " + collision.gameObject.name); // ตรวจสอบว่า Player ชนกับอะไร
-
-        if (collision.gameObject.CompareTag("Key")) // ถ้า Player ชนกุญแจ
+        // ตรวจสอบว่า Player ชนกับกุญแจหรือไม่
+        if (collision.gameObject.CompareTag("Key")) // ถ้า Player ชนกับกุญแจ
         {
-            Debug.Log("เก็บกุญแจ!"); // ขึ้นข้อความนี้เมื่อเก็บกุญแจ
-            if (keyCount < totalKeys) // ถ้ายังเก็บไม่ครบ
+            // ตรวจสอบว่าเก็บกุญแจได้ครบตามจำนวนหรือไม่
+            if (keyCount < totalKeys) 
             {
                 keyCount++; // เพิ่มจำนวนกุญแจ
                 UpdateKeyUI(); // อัปเดต UI
@@ -30,6 +29,6 @@ public class KeyCollector : MonoBehaviour
 
     void UpdateKeyUI()
     {
-        keyText.text = "Keys: " + keyCount + "/" + totalKeys;
-    }
+        // อัปเดต UI ให้แสดงจำนวนกุญแจ
+        keyText.text = "Keys: " + keyCount + "/" + totalKeys; }
 }
